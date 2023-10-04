@@ -1,0 +1,14 @@
+.lista-div {
+    border: gray 1px dotted;
+
+    .list-ele {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        .button {
+            margin-left: 10px;
+            background-color: aqua;
+        }
+    }
+}
