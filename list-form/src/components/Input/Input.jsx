@@ -7,16 +7,13 @@ function Input({ type = 'text', setValue, value }) {
     } else {
       setValue(event.target.checked);
     }
-  }
-  return (
-    <div>
-      <input
-        type={type}
-        onChange={handleChange}
-        checked={type === 'checkbox' ? undefined : null}
-        value={value}
-      />
-    </div>
-  );
+}
+    return(
+        <div>
+            <input type={type} onChange={handleChange} checked={type === "checkbox" ? value : undefined} value={value}/>
+        </div>
+    
+    )
+
 }
 export default Input;

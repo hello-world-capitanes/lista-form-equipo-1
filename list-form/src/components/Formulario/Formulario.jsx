@@ -10,12 +10,17 @@ function Formulario({ setList }) {
 
   const id = useId();
 
+
   function handleSubmit(event) {
     event.preventDefault();
     setList((prevList) => [
       ...prevList,
       { texto: nombre, logico: condiciones, seleccion: selectInfo },
     ]);
+
+    setNombre ("")
+    setCondiciones (false)
+    setSelectInfo([])
   }
   return (
     <div>
