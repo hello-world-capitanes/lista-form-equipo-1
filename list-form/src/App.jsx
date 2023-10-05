@@ -1,3 +1,14 @@
+import React from "react"
+import Formulario from "./componentes/Formulario"
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Mi Aplicación</h1>
+      <Formulario />
+     
+    </div>
+  )
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
