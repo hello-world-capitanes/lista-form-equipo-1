@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
+import './Selector.css';
 
-function Selector({selectInfo}) {
-  const opciones = ["Madrid", "Barcelona", "Alicante", "Valencia"];
-  const [opcionSeleccionada, setOpcionSeleccionada] = useState("Haz click aquí para desplegar la lista");
+function Selector({ selectInfo }) {
+  const opciones = ['Madrid', 'Barcelona', 'Alicante', 'Valencia'];
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState(
+    'Haz click aquí para desplegar la lista'
+  );
   const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState([]);
   const [desplegado, setDesplegado] = useState(false);
 
@@ -14,7 +17,7 @@ function Selector({selectInfo}) {
   const agregarOpcion = () => {
     if (!opcionesSeleccionadas.includes(opcionSeleccionada)) {
       setOpcionesSeleccionadas((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
-      selectInfo((prevOpciones) => [...prevOpciones, opcionSeleccionada])
+      selectInfo((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
     }
   };
 
@@ -27,7 +30,7 @@ function Selector({selectInfo}) {
       <label> ¿De dónde eres? Selecciona una opción: </label>
       <div className="selector-personalizado">
         <div
-          className={`opcion seleccionada ${desplegado ? "desplegado" : ""}`}
+          className={`opcion seleccionada ${desplegado ? 'desplegado' : ''}`}
           onClick={toggleDesplegable}
         >
           {opcionSeleccionada}
@@ -37,7 +40,7 @@ function Selector({selectInfo}) {
             {opciones.map((opcion) => (
               <div
                 key={opcion}
-                className={`opcion ${opcionSeleccionada === opcion ? "seleccionada" : ""}`}
+                className={`opcion ${opcionSeleccionada === opcion ? 'seleccionada' : ''}`}
                 onClick={() => handleCambiarOpcion(opcion)}
               >
                 {opcion}
@@ -58,4 +61,4 @@ function Selector({selectInfo}) {
   );
 }
 
-export default Selector
+export default Selector;

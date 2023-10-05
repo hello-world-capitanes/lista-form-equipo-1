@@ -1,0 +1,17 @@
+form {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.conditions {
+  margin: 0 0 0 0.5rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}

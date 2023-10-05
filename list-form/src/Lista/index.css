@@ -1,14 +1,15 @@
 .lista-div {
-    border: gray 1px dotted;
+  border: gray 1px solid;
+  border-radius: 12px;
 
-    .list-ele {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        margin: 10px;
-        .button {
-            margin-left: 10px;
-            background-color: aqua;
-        }
+  .list-ele {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    .button {
+      margin-left: 10px;
+      background-color: aqua;
     }
+  }
 }
