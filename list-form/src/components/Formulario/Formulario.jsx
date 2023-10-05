@@ -8,11 +8,7 @@ function Formulario({ setList }) {
   const [condiciones, setCondiciones] = useState('');
   const [selectInfo, setSelectInfo] = useState([]);
 
-import { useState, useId } from "react"
-import Input from "../Input/Input"
-import Selector from "../Selector/Selector"
-
-function Formulario({setList}){
+  const id = useId();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -44,41 +40,11 @@ function Formulario({setList}){
             </div>
           </div>
         </label>
-        <Selector selectInfo={setSelectInfo} />
+        <Selector selectInfo={setSelectInfo} lista={selectInfo} />
         <input type="submit" value="Enviar" />
       </form>
     </div>
   );
 }
+
 export default Formulario;
-
-    const id= useId()
-
-    //   function handleChange(event){
-    //     setValue(event.target.value)
-    //   }
-
-      // Manejar el envío del formulario
-  
-
-
-    function handleSubmit(event){
-        event.preventDefault()
-        setList(prevList => [...prevList, {texto: nombre, logico: condiciones, seleccion: selectInfo}])
-    }
-    return(
-        <div>
-        <form className="form" onSubmit={(event) => handleSubmit(event)}>
-            <label htmlFor="nombre">Nombre
-                <Input type="text" id={id} name="nombre" value={nombre} setValue={setNombre} />
-            </label>
-            <label htmlFor="condiciones">¿Aceptas términos y condiciones de uso?
-                <Input type="checkbox" id={id} name="condiciones" value={condiciones} setValue={setCondiciones}/>
-            </label>
-            <Selector selectInfo={setSelectInfo} lista = {selectInfo}/>
-            <input type="submit" value="Enviar" />
-        </form>
-        </div>
-    )
-}
-export default Formulario
