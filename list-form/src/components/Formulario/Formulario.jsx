@@ -7,14 +7,14 @@
 
 import { useState, useId } from "react"
 import Input from "../Input/Input"
+import Selector from "../Selector/Selector"
+function Formulario({setList}){
 
-function Formulario(){
+    const [nombre, setNombre] = useState("")
+    const [condiciones, setCondiciones] = useState("")
+    const [selectInfo, setSelectInfo] = useState([])
 
-      const [nombre, setNombre] = useState("")
-      const [condiciones, setCondiciones] = useState("")
-
-
-      const id= useId()
+    const id= useId()
 
     //   function handleChange(event){
     //     setValue(event.target.value)
@@ -23,9 +23,11 @@ function Formulario(){
       // Manejar el envío del formulario
   
 
-function handleSubmit(event){
-    event.preventDefault()
-}
+
+    function handleSubmit(event){
+        event.preventDefault()
+        setList(prevList => [...prevList, {texto: nombre, logico: condiciones, seleccion: selectInfo}])
+    }
     return(
         <div>
         <form className="form" onSubmit={(event) => handleSubmit(event)}>
@@ -35,6 +37,7 @@ function handleSubmit(event){
             <label htmlFor="condiciones">¿Aceptas términos y condiciones de uso?
                 <Input type="checkbox" id={id} name="condiciones" value={condiciones} setValue={setCondiciones}/>
             </label>
+            <Selector selectInfo={setSelectInfo}/>
             <input type="submit" value="Enviar"/>
         </form>
         </div>

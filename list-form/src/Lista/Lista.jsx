@@ -41,10 +41,10 @@ function Lista({ elementos, setList }) {
             {item.texto}
             <Button className="button" onClick={() => handleRemove(index)} text="Delete" />
             {!(index == elementos.length - 1) && (
-              <Button className="button" onClick={() => handleUpDown(index, true)} text="Up" />
+              <Button className="button" onClick={() => handleUpDown(index, false)} text="Up" />
             )}
             {!(index == 0) && (
-              <Button className="button" onClick={() => handleUpDown(index, false)} text="Down" />
+              <Button className="button" onClick={() => handleUpDown(index, true)} text="Down" />
             )}
           </li>
         ))}
