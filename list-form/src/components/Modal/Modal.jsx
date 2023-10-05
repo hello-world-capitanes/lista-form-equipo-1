@@ -10,7 +10,7 @@ const Modal = ({ info, isModalActive, setIsModalActive }) => {
       <div className="modal">
         <h1>INFORMACIÓN</h1>
         <p>{info.texto}</p>
-        <p>{info.logico}</p>
+        <p>{info.logico ? "acepto condiciones" : "no acepta las condiciones"}</p>
         <p>{info.seleccion}</p>
         <button onClick={() => setIsModalActive(false)}>Close</button>
       </div>
