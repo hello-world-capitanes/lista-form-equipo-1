@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './Selector.css';
 
-function Selector({selectInfo, lista}) {
-  const opciones = ["Madrid", "Barcelona", "Alicante", "Valencia"];
-  const [opcionSeleccionada, setOpcionSeleccionada] = useState("Haz click aquí para desplegar la lista");
+function Selector({ selectInfo, lista }) {
+  const opciones = ['Madrid', 'Barcelona', 'Alicante', 'Valencia'];
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState(
+    'Haz click aquí para desplegar la lista'
+  );
   //const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState([]);
   const [desplegado, setDesplegado] = useState(false);
 
@@ -15,7 +17,7 @@ function Selector({selectInfo, lista}) {
   const agregarOpcion = () => {
     if (!lista.includes(opcionSeleccionada)) {
       //setOpcionesSeleccionadas((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
-      selectInfo((prevOpciones) => [...prevOpciones, opcionSeleccionada])
+      selectInfo((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
     }
   };
 
@@ -25,13 +27,13 @@ function Selector({selectInfo, lista}) {
 
   return (
     <div>
-      <label> ¿De dónde eres? Selecciona una opción: </label>
+      <label>👇 ¿De dónde eres? Selecciona una opción 👇</label>
       <div className="selector-personalizado">
         <div
           className={`opcion seleccionada ${desplegado ? 'desplegado' : ''}`}
           onClick={toggleDesplegable}
         >
-          {opcionSeleccionada}
+          <p className="option-selector">{opcionSeleccionada}</p>
         </div>
         {desplegado && (
           <div className="opciones-desplegable">
@@ -40,6 +42,7 @@ function Selector({selectInfo, lista}) {
                 key={opcion}
                 className={`opcion ${opcionSeleccionada === opcion ? 'seleccionada' : ''}`}
                 onClick={() => handleCambiarOpcion(opcion)}
+                className="list-selection"
               >
                 {opcion}
               </div>
@@ -47,7 +50,9 @@ function Selector({selectInfo, lista}) {
           </div>
         )}
       </div>
-      <button type="button" onClick={agregarOpcion}>Agregar a la lista</button>
+      <button type="button" onClick={agregarOpcion}>
+        Agregar a la lista
+      </button>
       <p>La opción seleccionada es: {opcionSeleccionada}</p>
       <p>Opciones seleccionadas:</p>
       <ul>
@@ -60,4 +65,3 @@ function Selector({selectInfo, lista}) {
 }
 
 export default Selector;
-

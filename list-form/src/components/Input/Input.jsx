@@ -11,6 +11,7 @@ function Input({ type = 'text', setValue, value }) {
   return (
     <div>
       <input
+        className="input"
         type={type}
         onChange={handleChange}
         checked={type === 'checkbox' ? undefined : null}

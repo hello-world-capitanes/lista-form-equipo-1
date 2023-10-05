@@ -41,7 +41,7 @@ function Formulario({ setList }) {
           </div>
         </label>
         <Selector selectInfo={setSelectInfo} lista={selectInfo} />
-        <input type="submit" value="Enviar" />
+        <input className="submit-button" type="submit" value="Enviar" />
       </form>
     </div>
   );
