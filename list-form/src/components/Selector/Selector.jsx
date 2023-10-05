@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Selector() {
+function Selector({selectInfo}) {
   const opciones = ["Madrid", "Barcelona", "Alicante", "Valencia"];
   const [opcionSeleccionada, setOpcionSeleccionada] = useState("Haz click aquí para desplegar la lista");
   const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState([]);
@@ -14,6 +14,7 @@ function Selector() {
   const agregarOpcion = () => {
     if (!opcionesSeleccionadas.includes(opcionSeleccionada)) {
       setOpcionesSeleccionadas((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
+      selectInfo((prevOpciones) => [...prevOpciones, opcionSeleccionada])
     }
   };
 
