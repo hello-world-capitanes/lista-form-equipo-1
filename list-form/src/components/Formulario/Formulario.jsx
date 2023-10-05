@@ -12,7 +12,7 @@ import Selector from "../Selector/Selector"
 function Formulario({setList}){
 
     const [nombre, setNombre] = useState("")
-    const [condiciones, setCondiciones] = useState("")
+    const [condiciones, setCondiciones] = useState(false)
     const [selectInfo, setSelectInfo] = useState([])
 
     const id= useId()
@@ -28,10 +28,16 @@ function Formulario({setList}){
     function handleSubmit(event){
         event.preventDefault()
         setList(prevList => [...prevList, {texto: nombre, logico: condiciones, seleccion: selectInfo}])
+        
+
+        setNombre ("")
+        setCondiciones (false)
+        setSelectInfo([])
     }
+   
     return(
         <div>
-        <form className="form" onSubmit={(event) => handleSubmit(event)}>
+        <form className="form" onSubmit={(event) => handleSubmit(event)} >
             <label htmlFor="nombre">Nombre
                 <Input type="text" id={id} name="nombre" value={nombre} setValue={setNombre} />
             </label>
