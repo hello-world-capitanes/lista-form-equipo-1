@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+import './Selector.css';
 
 function Selector({selectInfo, lista}) {
   const opciones = ["Madrid", "Barcelona", "Alicante", "Valencia"];
@@ -27,7 +28,7 @@ function Selector({selectInfo, lista}) {
       <label> ¿De dónde eres? Selecciona una opción: </label>
       <div className="selector-personalizado">
         <div
-          className={`opcion seleccionada ${desplegado ? "desplegado" : ""}`}
+          className={`opcion seleccionada ${desplegado ? 'desplegado' : ''}`}
           onClick={toggleDesplegable}
         >
           {opcionSeleccionada}
@@ -37,7 +38,7 @@ function Selector({selectInfo, lista}) {
             {opciones.map((opcion) => (
               <div
                 key={opcion}
-                className={`opcion ${opcionSeleccionada === opcion ? "seleccionada" : ""}`}
+                className={`opcion ${opcionSeleccionada === opcion ? 'seleccionada' : ''}`}
                 onClick={() => handleCambiarOpcion(opcion)}
               >
                 {opcion}
@@ -58,5 +59,5 @@ function Selector({selectInfo, lista}) {
   );
 }
 
-export default Selector
+export default Selector;
 
