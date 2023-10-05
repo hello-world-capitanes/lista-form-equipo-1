@@ -10,9 +10,11 @@ import {useRef} from "react";
 function Input({type ="text", setValue, value}){
     
     function handleChange(event){
-        const val = event.target.value
-        const type = event.target.value
-        setValue(event.target.value)
+        if (type == "text"){
+            setValue(event.target.value)
+        } else {
+            setValue(event.target.checked)
+        }
     }
     return(
         <div>
