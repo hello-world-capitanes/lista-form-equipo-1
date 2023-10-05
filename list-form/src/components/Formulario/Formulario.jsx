@@ -8,6 +8,7 @@
 import { useState, useId } from "react"
 import Input from "../Input/Input"
 import Selector from "../Selector/Selector"
+
 function Formulario({setList}){
 
     const [nombre, setNombre] = useState("")
@@ -37,8 +38,8 @@ function Formulario({setList}){
             <label htmlFor="condiciones">¿Aceptas términos y condiciones de uso?
                 <Input type="checkbox" id={id} name="condiciones" value={condiciones} setValue={setCondiciones}/>
             </label>
-            <Selector selectInfo={setSelectInfo}/>
-            <input type="submit" value="Enviar"/>
+            <Selector selectInfo={setSelectInfo} lista = {selectInfo}/>
+            <input type="submit" value="Enviar" />
         </form>
         </div>
     )

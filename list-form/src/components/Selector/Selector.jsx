@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function Selector({selectInfo}) {
+function Selector({selectInfo, lista}) {
   const opciones = ["Madrid", "Barcelona", "Alicante", "Valencia"];
   const [opcionSeleccionada, setOpcionSeleccionada] = useState("Haz click aquí para desplegar la lista");
-  const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState([]);
+  //const [opcionesSeleccionadas, setOpcionesSeleccionadas] = useState([]);
   const [desplegado, setDesplegado] = useState(false);
 
   const handleCambiarOpcion = (opcion) => {
@@ -12,8 +12,8 @@ function Selector({selectInfo}) {
   };
 
   const agregarOpcion = () => {
-    if (!opcionesSeleccionadas.includes(opcionSeleccionada)) {
-      setOpcionesSeleccionadas((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
+    if (!lista.includes(opcionSeleccionada)) {
+      //setOpcionesSeleccionadas((prevOpciones) => [...prevOpciones, opcionSeleccionada]);
       selectInfo((prevOpciones) => [...prevOpciones, opcionSeleccionada])
     }
   };
@@ -46,11 +46,11 @@ function Selector({selectInfo}) {
           </div>
         )}
       </div>
-      <button onClick={agregarOpcion}>Agregar a la lista</button>
+      <button type="button" onClick={agregarOpcion}>Agregar a la lista</button>
       <p>La opción seleccionada es: {opcionSeleccionada}</p>
       <p>Opciones seleccionadas:</p>
       <ul>
-        {opcionesSeleccionadas.map((opcion, index) => (
+        {lista.map((opcion, index) => (
           <li key={index}>{opcion}</li>
         ))}
       </ul>
@@ -59,3 +59,4 @@ function Selector({selectInfo}) {
 }
 
 export default Selector
+
