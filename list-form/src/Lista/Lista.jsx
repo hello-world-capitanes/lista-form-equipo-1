@@ -36,9 +36,8 @@ function Lista({ elementos, setList }) {
           <li
             className="list-ele"
             key={`${item.texto}${item.logico}`}
-            onDoubleClick={() => handleSelect(item)}
           >
-            {item.texto}
+            <p onDoubleClick={() => handleSelect(item)}>{item.texto}</p>
             <Button className="button" onClick={() => handleRemove(index)} text="Delete" />
             {!(index == elementos.length - 1) && (
               <Button className="button" onClick={() => handleUpDown(index, false)} text="Up" />
