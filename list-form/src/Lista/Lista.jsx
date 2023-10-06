@@ -33,18 +33,15 @@ function Lista({ elementos, setList }) {
     <>
       <ul className="lista-div">
         {elementos.map((item, index) => (
-          <li
-            className="list-ele"
-            key={`${item.texto}${item.logico}`}
-          >
-            <p onDoubleClick={() => handleSelect(item)}>{item.texto}</p>
-            <Button className="button" onClick={() => handleRemove(index)} text="Delete" />
+          <li className="list-ele" key={`${item.texto}${item.logico}`}>
+            <Button className="button" onClick={() => handleRemove(index)} text="❌" />
             {!(index == elementos.length - 1) && (
-              <Button className="button" onClick={() => handleUpDown(index, false)} text="Up" />
+              <Button className="button" onClick={() => handleUpDown(index, false)} text="🔼" />
             )}
             {!(index == 0) && (
-              <Button className="button" onClick={() => handleUpDown(index, true)} text="Down" />
+              <Button className="button" onClick={() => handleUpDown(index, true)} text="🔽" />
             )}
+            <p onDoubleClick={() => handleSelect(item)}>{item.texto}</p>
           </li>
         ))}
       </ul>

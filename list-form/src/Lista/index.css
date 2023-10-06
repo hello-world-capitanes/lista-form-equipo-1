@@ -1,5 +1,5 @@
 .lista-div {
-  border: gray 1px solid;
+  border: rgb(53, 53, 53) 1px solid;
   border-radius: 12px;
 
   .list-ele {
@@ -9,7 +9,10 @@
     margin: 10px;
     .button {
       margin-left: 10px;
-      background-color: aqua;
+      background-color: white;
+      border: 1.5px solid lightseagreen;
+      padding: 1rem 1rem;
+      color: white;
     }
   }
 }
